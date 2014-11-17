@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Alumno" table="alumno">
+    <unique-constraints>
+      <unique-constraint name="idx_alumno_id" columns="id"/>
+      <unique-constraint name="idx_alumno_carnet" columns="carnet"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="carnet" type="string" column="carnet" length="7" nullable="false"/>
+    <field name="nombreAlumno" type="string" column="nombre_alumno" length="30" nullable="false"/>
+    <field name="apellidoAlumno" type="string" column="apellido_alumno" length="30" nullable="true"/>
+    <field name="edadAlumno" type="integer" column="edad_alumno" nullable="true"/>
+    <field name="sexoAlumno" type="string" column="sexo_alumno" length="1" nullable="true"/>
+  </entity>
+</doctrine-mapping>
